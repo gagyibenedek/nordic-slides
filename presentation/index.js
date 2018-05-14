@@ -37,6 +37,13 @@ const images = {
   joinme: require("../assets/jm.svg"),
   lmi: require("../assets/lmi.svg"),
   android: require("../assets/android.svg"),
+  goodIdea: require("../assets/goodIdea.png"),
+  drawback: require("../assets/drawback.gif"),
+  snoopy: require("../assets/snoopy.png"),
+  tech: require("../assets/tech.svg"),
+  techHL: require("../assets/techHL.svg"),
+  brain: require("../assets/brain.svg"),
+  brainHL: require("../assets/brainHL.svg"),
   emscripten: require("../assets/emscripten.png"),
   heart: require("../assets/heart.png"),
   win: require("../assets/win.png"),
@@ -64,7 +71,12 @@ const highlightedHeader = {
   color: colors.highlight,
   fontWeight: "bold"
 };
+const listStyling = {textSize:"2rem", margin: "25px 0"};
+const listStylingBig = {textSize:"2.66rem", margin: "25px 0"};
 const listImage = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.speed} />;
+const snoopy = <Image display="inline-block" height="60px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.snoopy} />;
+const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">+</S>;
+const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">-</S>;
 
 export default class Presentation extends React.Component {
   render() {
@@ -176,25 +188,6 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Image src={images.hot} height="80vh" style={{ maxHeight: "700px" }}/>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
-            The
-            <S type="" style={highlightedHeader}> drawbacks </S>
-            of cross-platform web development
-          </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>abstraction</ListItem>
-            <ListItem>performance</ListItem>
-            <ListItem>library vs. ecosystem</ListItem>
-            <ListItem>patent misery</ListItem>
-            <ListItem>(can be) and HR nightmare</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
           <Heading size={1} textColor="regular">The</Heading>
           <Image src={images.joinme} height="250px"/>
           <Heading size={1} textColor="regular">story</Heading>
@@ -209,7 +202,6 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
               <Image src={images.win} height="130px" />
-              <Text textColor="regular">2009</Text>
             </Fill>
             <Fill>
               <Appear><Image src={images.mac} height="130px" /></Appear>
@@ -223,7 +215,6 @@ export default class Presentation extends React.Component {
               <Appear>
                 <div>
                   <Image src={images.ios} height="130px" />
-                  <Text textColor="regular">2012</Text>
                 </div>
               </Appear>
             </Fill>
@@ -231,9 +222,54 @@ export default class Presentation extends React.Component {
           <Appear>
             <div>
               <Image src={images.html5} height="130px" />
-              <Text textColor="regular">2015</Text>
+              <Text textColor="regular">2014</Text>
             </div>
           </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={3} textColor="regular">Cross platform solutions?</Heading>
+          <Appear>
+            <Image display="inline-block" margin={10} src={images.goodIdea} height="250px"/>
+          </Appear>
+          <Appear>
+            <Image display="inline-block" margin={10} src={images.drawback} height="250px"/>
+          </Appear>  
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular">
+            The
+            <S type="" style={highlightedHeader}> drawbacks </S>
+            of cross-platform web development
+          </Heading>
+          <List type="A" textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
+            <ListItem textSize="2rem" margin="25px 0">{snoopy}abstraction</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{snoopy}performance</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{snoopy}library vs. ecosystem</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{snoopy}patent misery</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{snoopy}(can be) and HR nightmare</ListItem>
+          </List>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Layout>
+            <Fill>
+              <Image src={images.joinme} height="200px" />
+            </Fill>
+            <Fill>
+              <S type="" textSize="170px" style={{ color: colors.highlight }}>+</S>
+            </Fill>
+            <Fill>
+              <Image src={images.emscripten} height="200px" />
+            </Fill>
+            <Fill>
+              <S type="" textSize="170px" style={{ color: colors.highlight }}>=</S>
+            </Fill>
+            <Fill>
+              <Image src={images.heart} height="200px" />
+            </Fill>
+          </Layout>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
@@ -262,21 +298,41 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Layout>
+          <Layout style={{ alignItems: 'center' }}>
             <Fill>
-              <Image src={images.joinme} height="200px" />
+              <Image src={images.emscripten} height="300px" />
             </Fill>
             <Fill>
-              <S type="" textSize="170px" style={{ color: colors.highlight }}>+</S>
+              <Text textSize="170px" textColor="regular">==</Text>
             </Fill>
             <Fill>
-              <Image src={images.emscripten} height="200px" />
+              <Image src={images.wasmLogo} height="300px" />
+            </Fill>
+          </Layout>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Text textSize="300px" textColor="regular">-50%</Text>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Layout style={{ alignItems: 'center' }}>
+            <Fill>
+              <Image src={images.tech} height="400px" />
             </Fill>
             <Fill>
-              <S type="" textSize="170px" style={{ color: colors.highlight }}>=</S>
+              <Image src={images.brain} height="400px" />
+            </Fill>
+          </Layout>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Layout style={{ alignItems: 'center' }}>
+            <Fill>
+              <Image src={images.techHL} height="400px" />
             </Fill>
             <Fill>
-              <Image src={images.heart} height="200px" />
+              <Image src={images.brain} height="400px" />
             </Fill>
           </Layout>
         </Slide>
@@ -286,10 +342,9 @@ export default class Presentation extends React.Component {
             C++
           </Heading>
           <Appear>
-            <List type="A" textColor="regular">
-              <ListItem>write, debug and fix once</ListItem>
-              <ListItem>fluid integration of new platforms</ListItem>
-              <ListItem>the "right" amount of freedom</ListItem>
+            <List type="A" textColor="regular" style={{ listStyle: 'none' }}>
+              <ListItem {...listStylingBig}>{plus}fluid integration of new platforms</ListItem>
+              <ListItem {...listStylingBig}>{plus}the <S type="" textColor="highlight">"right"</S> amount of freedom</ListItem>
             </List>
           </Appear>
         </Slide>
@@ -299,11 +354,13 @@ export default class Presentation extends React.Component {
             C
             <S type="" style={{ color: colors.highlight }}>--</S>
           </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>slow compilation</ListItem>
-            <ListItem>complex CI</ListItem>
-            <ListItem>high entry barrier for developers</ListItem>
-          </List>
+          <Appear>
+            <List type="A" textColor="regular" style={{ listStyle: 'none' }}>
+              <ListItem {...listStylingBig}>{minus}slow compilation</ListItem>
+              <ListItem {...listStylingBig}>{minus}complex CI</ListItem>
+              <ListItem {...listStylingBig}>{minus}high entry barrier for developers</ListItem>
+            </List>
+          </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
