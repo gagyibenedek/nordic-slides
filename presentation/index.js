@@ -28,9 +28,12 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 const images = {
+  tea: require("../assets/tea.jpg"),
+  teapick: require("../assets/teapick.jpg"),
+  meditation: require("../assets/meditation.jpg"),
   wasmLogo: require("../assets/WebAssembly_Logo.png"),
   compile: require("../assets/compile.png"),
-  hot: require("../assets/hot.jpg"),
+  speed: require("../assets/speed.svg"),
   joinme: require("../assets/jm.svg"),
   lmi: require("../assets/lmi.svg"),
   android: require("../assets/android.svg"),
@@ -61,6 +64,7 @@ const highlightedHeader = {
   color: colors.highlight,
   fontWeight: "bold"
 };
+const listImage = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.speed} />;
 
 export default class Presentation extends React.Component {
   render() {
@@ -82,146 +86,82 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["zoom"]} bgColor="highlight">
-          <Image src={images.lmi} width="100%" />
-          <Heading size={2} lineHeight={1} textColor="white">
-            @BenedekGagyi
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.tea} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.teapick} />
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.meditation} />
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" >
+            What is
+            <Image src={images.wasmLogo} height="300px" display="inline-block" margin="0 20px" style={{ verticalAlign: 'middle' }}/>
+            ?
           </Heading>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin=" 0 0 30px">
-            The state of the
-            <S type="" style={highlightedHeader}> web </S>
-            in 2017
-          </Heading>
-          <Layout>
-            <Fill>
-              <Heading size={5} textColor="white" bgColor="regular" margin="10px" padding="0 10px" lineHeight="2em">
-                JavaScript<br />Monopoly
-              </Heading>
-            </Fill>
-            <Fill>
-              <Heading size={5} textColor="white" bgColor="regular" margin="10px" padding="0 10px" lineHeight="4em">
-                HW APIs
-              </Heading>
-            </Fill>
-          </Layout>
-          <Appear>
-            <Heading size={5} textColor="white" bgColor="highlight" margin="10px" padding="0 10px" lineHeight="2em">
-              Disappointing performance
-            </Heading>
-          </Appear>
+          <BlockQuote>
+            <Quote textSize={75} textColor="regular">
+              Static-language compiler target low-level portable binary code format.
+              <br />
+              <S type="" style={highlightedHeader}>Go nuts.</S>
+            </Quote>
+            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
+          </BlockQuote>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin=" 0 0 30px">
-            JS
-            <S type="" style={highlightedHeader}> performance: </S>
-            why does it suck?
-          </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>simplicity above everything else</ListItem>
-            <ListItem>dynamic, weakly typed</ListItem>
-            <ListItem>garbage collector</ListItem>
-            <ListItem>2008: just-in-time (JIT) compiling</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin=" 0 0 30px">
-            A significant step:
-            <S type="" style={highlightedHeader}> asm </S>
-            .js
-          </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>2013, Mozilla</ListItem>
-            <ListItem>a subset of JS</ListItem>
-            <ListItem>double vs. int 32</ListItem>
-            <ListItem>i = i|0;</ListItem>
-            <ListItem>
-              <S type="" style={{ color: colors.highlight }}>not </S>
-              a compile target (
-              <S type="" style={{ color: colors.highlight }}>?</S>
-              )
-            </ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" margin=" 0 0 30px">
-          <Heading size={4} textColor="regular">
-            <S type="" style={highlightedHeader}>Web</S>
-            Assembly
-          </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>WASM</ListItem>
-            <ListItem>announced on 17 June 2015</ListItem>
-            <ListItem>open standard: developed by W3C</ListItem>
-            <ListItem>all the mayor players are behind it</ListItem>
-            <ListItem>15 March 2016: MVP is demonstrated</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={1} textColor="regular">What is</Heading>
-          <Image display="block" height="300" src={images.wasmLogo} />
-          <Heading size={1} textColor="regular">?</Heading>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin=" 0 0 30px">
-            It's a compile
-            <S type="" style={highlightedHeader}> target</S>
+          <Heading size={4} textColor="regular" >
+            A
+            <S type="" style={highlightedHeader}> binary </S>
+            format
           </Heading>
           <Image display="block" height="500" src={images.compile} />
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin=" 0 0 30px">
-            asm.js
-            <S type="" style={highlightedHeader}> vs. </S>
-            WebAssembly
+          <Heading size={4} textColor="regular" >
+            The next step in web
+            <S type="" style={highlightedHeader}> performance</S>
           </Heading>
-          <Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">equivalent (for now, to support polyfilling)</Text>
-          <Layout>
-
-            <Fill>
-              <List textColor="highlight" margin={10} >
-                <ListItem textSize="2rem">pushed by Mozilla</ListItem>
-                <br />
-                <ListItem textSize="2rem">minify, zip / unzip</ListItem>
-                <ListItem textSize="2rem">warm-up time</ListItem>
-                <ListItem textSize="2rem">garbage collection</ListItem>
-                <br />
-                <ListItem textSize="2rem">limited to JS operations</ListItem>
-                <br />
-                <ListItem textSize="2rem">non-typical compile target</ListItem>
-              </List>
-            </Fill>
-            <Fill>
-              <List textColor="regular" margin={10}>
-                <ListItem textSize="2rem">backed by all major players</ListItem>
-                <ListItem textSize="2rem">inherently compressed</ListItem>
-                <ListItem textSize="2rem">consistent performance</ListItem>
-                <ListItem textSize="2rem">manual memory management</ListItem>
-                <ListItem textSize="2rem">CPU features (i64, popcount etc.)</ListItem>
-                <ListItem textSize="2rem">WASM specific compiler optimizations (Binaryen)</ListItem>
-              </List>
-            </Fill>
-          </Layout>
-          <Appear><Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">no interpretation step</Text></Appear>
-          <Appear><Text textSize="2rem" bgColor="regular" textColor="white" padding="5px">can access DOM and other browser APIs</Text></Appear>
+          <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}inherently compressed</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}no interpretation step</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}consistent performance</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}manual memory management</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}CPU features (i64, popcount etc.)</ListItem>
+            <ListItem textSize="2rem" margin="25px 0">{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
+          </List>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.slow}/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.fast} />
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" margin=" 0 0 30px">
-          <Heading size={2} textColor="regular">
-            Speed is everything
-            <Appear><S type="" style={highlightedHeader}>?</S></Appear>
+        <Slide transition={["fade"]} bgColor="bg" >
+          <Heading size={1} textColor="highlight" textSize="200px" margin="0 0 50px">
+            !
+            <Image display="inline-block" height="200px" style={{ verticalAlign: 'bottom'}} src={images.wasmLogo} />
           </Heading>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              solo mission
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              the next Java applet
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              ready yet
+            </Text>
+          </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
