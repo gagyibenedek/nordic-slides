@@ -39,18 +39,26 @@ const images = {
   android: require("../assets/android.svg"),
   goodIdea: require("../assets/goodIdea.png"),
   drawback: require("../assets/drawback.gif"),
+  door: require("../assets/door.gif"),
   snoopy: require("../assets/snoopy.png"),
   tech: require("../assets/tech.svg"),
   techHL: require("../assets/techHL.svg"),
   brain: require("../assets/brain.svg"),
   brainHL: require("../assets/brainHL.svg"),
+  rust: require("../assets/rust.svg"),
   emscripten: require("../assets/emscripten.png"),
+  layers1: require("../assets/layers1.png"),
+  layers2: require("../assets/layers2.png"),
   heart: require("../assets/heart.png"),
   win: require("../assets/win.png"),
   ios: require("../assets/ios.png"),
   html5: require("../assets/html5.png"),
   fast: require("../assets/fast.jpg"),
   slow: require("../assets/slow.jpg"),
+  connect: require("../assets/connect.jpg"),
+  dongle: require("../assets/dongle.jpg"),
+  plug: require("../assets/plug.jpg"),
+  ports: require("../assets/ports.jpg"),
   mac: require("../assets/mac.gif")
 };
 
@@ -77,6 +85,7 @@ const listImage = <Image display="inline-block" height="30px" margin="0 10px" st
 const snoopy = <Image display="inline-block" height="60px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.snoopy} />;
 const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">+</S>;
 const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">-</S>;
+const rust = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.rust} />;
 
 export default class Presentation extends React.Component {
   render() {
@@ -138,12 +147,12 @@ export default class Presentation extends React.Component {
             <S type="" style={highlightedHeader}> performance</S>
           </Heading>
           <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}inherently compressed</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}no interpretation step</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}consistent performance</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}manual memory management</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}CPU features (i64, popcount etc.)</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
+            <ListItem {...listStyling}>{listImage}inherently compressed</ListItem>
+            <ListItem {...listStyling}>{listImage}no interpretation step</ListItem>
+            <ListItem {...listStyling}>{listImage}consistent performance</ListItem>
+            <ListItem {...listStyling}>{listImage}manual memory management</ListItem>
+            <ListItem {...listStyling}>{listImage}CPU features (i64, popcount etc.)</ListItem>
+            <ListItem {...listStyling}>{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
           </List>
         </Slide>
         {/* ************************************    ************************************ */}
@@ -244,11 +253,11 @@ export default class Presentation extends React.Component {
             of cross-platform web development
           </Heading>
           <List type="A" textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
-            <ListItem textSize="2rem" margin="25px 0">{snoopy}abstraction</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{snoopy}performance</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{snoopy}library vs. ecosystem</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{snoopy}patent misery</ListItem>
-            <ListItem textSize="2rem" margin="25px 0">{snoopy}(can be) and HR nightmare</ListItem>
+            <ListItem {...listStyling}>{snoopy}abstraction</ListItem>
+            <ListItem {...listStyling}>{snoopy}performance</ListItem>
+            <ListItem {...listStyling}>{snoopy}library vs. ecosystem</ListItem>
+            <ListItem {...listStyling}>{snoopy}<S type="strikethrough">patent misery</S></ListItem>
+            <ListItem {...listStyling}>{snoopy}(can be) and HR nightmare</ListItem>
           </List>
         </Slide>
         {/* ************************************    ************************************ */}
@@ -364,7 +373,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
+          <Heading size={4} textColor="regular" margin="0 0 50px">
             Does the
             <S type="" style={highlightedHeader}> language </S>
             matter?
@@ -374,6 +383,70 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Heading size={6} textColor="white" bgColor="highlight" padding="10px" margin="10px">Platform specific stuff</Heading>
+          </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers1} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers2} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.connect} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.ports} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.dongle} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.plug} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" margin="0 0 50px">
+            The contract is
+            <S type="" style={highlightedHeader}> sacred</S>
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" margin="0 0 50px">
+            Testing is hard
+          </Heading>
+          <Image src={images.door} height="16em" />
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" margin="0 0 50px">
+            Tests
+          </Heading>
+          <Appear>
+            <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">Unit tests</Heading>
+          </Appear>
+          <Appear>
+            <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">💸 Integration tests 💸</Heading>
+          </Appear>
+          <Appear>
+            <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">
+              💸💸💸
+              <S type="bold" padding="0 90px">E2e tests</S>
+              💸💸💸
+            </Heading>
+          </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" margin="0 0 50px">
+            Good CI is a
+            <S type="" style={highlightedHeader}> must</S>
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" margin="0 0 50px">
+            Monolith vs microservice?
+          </Heading>
+          <Appear>
+            <Heading size={1} textColor="regular" margin="0 0 50px">
+              The end result is a monolith, so
+              <S type="" style={highlightedHeader}>...</S>
+            </Heading>
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
@@ -438,31 +511,35 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
-            How will
+          <Heading size={4} textColor="regular" margin="0 0 50px">
+            How does
             <S type="" style={highlightedHeader}> WASM </S>
             help us?
           </Heading>
-          <Heading size={5} bgColor="regular" textColor="white" lineHeight="1.5em" padding="10px" margin="10px">Performance</Heading>
-          <Heading size={5} bgColor="regular" textColor="white" lineHeight="1.5em" padding="10px" margin="10px">No compromises</Heading>
-          <Heading size={5} bgColor="regular" textColor="white" lineHeight="1.5em" padding="10px" margin="10px">More approachable languages</Heading>
+          <Appear>
+            <Image display="inline-block" height="300px" margin="0 50px" src={images.speed} />
+          </Appear>
+          <Appear>
+            <Image display="inline-block" height="300px" margin="0 50px" src={images.rust} />
+          </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             Rust
           </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>
+          <List type="A" textColor="regular" style={{ listStyle: 'none' }}>
+            <ListItem{...listStyling}>
+              {rust}
               it's a
               <S type="" style={{ color: colors.highlight }}> modern </S>
               language
             </ListItem>
-            <ListItem>friendly learning curve</ListItem>
-            <ListItem>super safe: no memory corruptions/null pointers</ListItem>
-            <ListItem>built with cross-platform in mind</ListItem>
-            <ListItem>built in unit testing support</ListItem>
-            <ListItem>great tooling (Cargo)</ListItem>
+            <ListItem {...listStyling}>{rust}friendly learning curve</ListItem>
+            <ListItem {...listStyling}>{rust}super safe: no memory corruptions/null pointers</ListItem>
+            <ListItem {...listStyling}>{rust}built with cross-platform in mind</ListItem>
+            <ListItem {...listStyling}>{rust}built in unit testing support</ListItem>
+            <ListItem {...listStyling}>{rust}great tooling (Cargo)</ListItem>
           </List>
         </Slide>
         {/* ************************************    ************************************ */}
@@ -475,19 +552,6 @@ export default class Presentation extends React.Component {
               DEMO
             </Heading>
           </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
-            Summary
-          </Heading>
-          <List type="A" textColor="regular">
-            <ListItem>WebAssembly is here to stay...</ListItem>
-            <ListItem>...and so is JavaScript</ListItem>
-            <ListItem>Emscripten is the king</ListItem>
-            <ListItem>binaryen (asm2wasm)</ListItem>
-            <ListItem>webassembly, assemblyscript, turboscript</ListItem>
-          </List>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
