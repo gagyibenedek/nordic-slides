@@ -86,6 +86,7 @@ const snoopy = <Image display="inline-block" height="60px" margin="0 10px" style
 const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">+</S>;
 const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">-</S>;
 const rust = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.rust} />;
+const organizeList = {textColor: "regular", textSize: "2.5rem", padding: "20px"}
 
 export default class Presentation extends React.Component {
   render() {
@@ -451,7 +452,18 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
+          <Layout style={{ alignItems: 'center' }}>
+            <Fill>
+              <Image src={images.tech} height="400px" />
+            </Fill>
+            <Fill>
+              <Image src={images.brainHL} height="400px" />
+            </Fill>
+          </Layout>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" margin="0 0 50px">
             How do we
             <S type="" style={highlightedHeader}> organize</S>
             ?
@@ -468,32 +480,58 @@ export default class Presentation extends React.Component {
               </Appear>
             </Fill>
           </Layout>
-          <Layout>
-            <Fill>
-              <Appear>
-                <List type="A" textColor="regular" padding="10px" margin="5px 10px">
-                  <ListItem>product</ListItem>
-                  <ListItem>fast development, long queuing</ListItem>
-                  <ListItem>ideal for big steps</ListItem>
-                  <ListItem>it's easy to get left behind</ListItem>
-                </List>
-              </Appear>
-            </Fill>
-            <Fill>
-              <Appear>
-                <List type="A" textColor="regular" padding="10px" margin="5px 10px">
-                  <ListItem>open source</ListItem>
-                  <ListItem>slow development, democratic features</ListItem>
-                  <ListItem>lots of small steps</ListItem>
-                  <ListItem>my fix is your bug</ListItem>
-                </List>
-              </Appear>
-            </Fill>
-          </Layout>
+          <Appear >
+            <div>
+              <Layout>
+                <Fill>
+                  <Text {...organizeList}>product</Text>
+                </Fill>
+                <Fill>
+                <Text {...organizeList}>open source</Text>
+                </Fill>
+              </Layout>
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Layout>
+                <Fill>
+                <Text {...organizeList}>fast, queuing</Text>
+                </Fill>
+                <Fill>
+                  <Text {...organizeList}>slow, democratic</Text>
+                </Fill>
+              </Layout>
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Layout>
+                <Fill>
+                  <Text {...organizeList}>ideal for big steps</Text>
+                </Fill>
+                <Fill>
+                  <Text {...organizeList}>lots of small steps</Text>
+                </Fill>
+              </Layout>
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+              <Layout>
+                <Fill>
+                  <Text {...organizeList}>hard to keep up</Text>
+                </Fill>
+                <Fill>
+                  <Text {...organizeList}>my fix is your bug</Text>
+                </Fill>
+              </Layout>
+            </div>
+          </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
+          <Heading size={4} textColor="regular"  margin="0 0 50px">
             How do we
             <S type="" style={highlightedHeader}> organize</S>
             ?
