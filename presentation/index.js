@@ -59,6 +59,8 @@ const images = {
   dongle: require("../assets/dongle.jpg"),
   plug: require("../assets/plug.jpg"),
   ports: require("../assets/ports.jpg"),
+  corruption: require("../assets/corruption.jpg"),
+  tweet: require("../assets/tweet.png"),
   mac: require("../assets/mac.gif")
 };
 
@@ -438,18 +440,6 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin="0 0 50px">
-            Monolith vs microservice?
-          </Heading>
-          <Appear>
-            <Heading size={1} textColor="regular" margin="0 0 50px">
-              The end result is a monolith, so
-              <S type="" style={highlightedHeader}>...</S>
-            </Heading>
-          </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
           <Layout style={{ alignItems: 'center' }}>
             <Fill>
               <Image src={images.tech} height="400px" />
@@ -580,20 +570,35 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
+          <Heading size={1} textColor="regular">
+            DEMO
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" margin="0 0 50px">
             AssemblyScript
           </Heading>
-          <Appear>
-            <Heading size={1} textColor="regular">
-              DEMO
-            </Heading>
-          </Appear>
+          <Heading size={4} textColor="regular" margin="0 0 30px">
+            Daniel Wirtz
+          </Heading>
+          <Heading size={4} textColor="regular">
+            <S type="bold" textColor="highlight">@</S>dcodeIO
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Image display="inline-block" height="80vh" margin="0 50px" src={images.corruption} />
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Image display="inline-block" height="80vh" margin="0 50px" src={images.tweet} />
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <BlockQuote>
             <Quote textSize={75} textColor="highlight">
-              <S type="" style={{ color: colors.regular }}>Always bet on JavaScript</S>
+              <S type="bold" style={{ color: colors.regular }}>Always bet on JavaScript</S>
               <Appear><span> and WASM</span></Appear>
             </Quote>
             <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
