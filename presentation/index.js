@@ -262,7 +262,6 @@ export default class Presentation extends React.Component {
             <ListItem {...listStyling}>{snoopy}abstraction</ListItem>
             <ListItem {...listStyling}>{snoopy}performance</ListItem>
             <ListItem {...listStyling}>{snoopy}library vs. ecosystem</ListItem>
-            <ListItem {...listStyling}>{snoopy}<S type="strikethrough">patent misery</S></ListItem>
             <ListItem {...listStyling}>{snoopy}(can be) and HR nightmare</ListItem>
           </List>
         </Slide>
