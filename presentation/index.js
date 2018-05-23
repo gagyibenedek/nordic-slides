@@ -83,8 +83,8 @@ const listStyling = {textSize:"2rem", margin: "25px 0"};
 const listStylingBig = {textSize:"2.66rem", margin: "25px 0"};
 const listImage = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.speed} />;
 const snoopy = <Image display="inline-block" height="60px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.snoopy} />;
-const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">+</S>;
-const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">-</S>;
+const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">++</S>;
+const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">--</S>;
 const rust = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.rust} />;
 const organizeList = {textColor: "regular", textSize: "2.5rem", padding: "20px"}
 
@@ -417,9 +417,7 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="regular" margin="0 0 50px">
             Tests
           </Heading>
-          <Appear>
-            <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">Unit tests</Heading>
-          </Appear>
+          <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">Unit tests</Heading>
           <Appear>
             <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">💸 Integration tests 💸</Heading>
           </Appear>
@@ -508,10 +506,10 @@ export default class Presentation extends React.Component {
             <div>
               <Layout>
                 <Fill>
-                  <Text {...organizeList}>ideal for big steps</Text>
+                  <Text {...organizeList}>ownership</Text>
                 </Fill>
                 <Fill>
-                  <Text {...organizeList}>lots of small steps</Text>
+                  <Text {...organizeList}>estimation</Text>
                 </Fill>
               </Layout>
             </div>
@@ -520,10 +518,10 @@ export default class Presentation extends React.Component {
             <div>
               <Layout>
                 <Fill>
-                  <Text {...organizeList}>hard to keep up</Text>
+                  <Text {...organizeList}>ideal for big steps</Text>
                 </Fill>
                 <Fill>
-                  <Text {...organizeList}>my fix is your bug</Text>
+                  <Text {...organizeList}>lots of small steps</Text>
                 </Fill>
               </Layout>
             </div>
