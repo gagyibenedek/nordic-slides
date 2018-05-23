@@ -28,6 +28,7 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 const images = {
+  kettle: require("../assets/kettle.jpg"),
   tea: require("../assets/tea.jpg"),
   teapick: require("../assets/teapick.jpg"),
   meditation: require("../assets/meditation.jpg"),
@@ -109,6 +110,8 @@ export default class Presentation extends React.Component {
             </Heading>
           </Appear>
         </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.kettle} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.tea} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
@@ -587,13 +590,9 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Image display="inline-block" height="80vh" margin="0 50px" src={images.corruption} />
-        </Slide>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.corruption} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Image display="inline-block" height="80vh" margin="0 50px" src={images.tweet} />
-        </Slide>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.tweet} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <BlockQuote>
