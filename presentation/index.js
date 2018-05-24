@@ -425,7 +425,7 @@ export default class Presentation extends React.Component {
           <Appear>
             <Heading size={6} textColor="white" bgColor="regular" padding="10px" margin="10px">
               💸💸💸
-              <S type="bold" padding="0 90px">E2e tests</S>
+              <S type="bold" padding="0 90px">E2E tests</S>
               💸💸💸
             </Heading>
           </Appear>
