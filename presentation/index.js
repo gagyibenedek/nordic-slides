@@ -536,39 +536,6 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" margin="0 0 50px">
-            How does
-            <S type="" style={highlightedHeader}> WASM </S>
-            help us?
-          </Heading>
-          <Appear>
-            <Image display="inline-block" height="300px" margin="0 50px" src={images.speed} />
-          </Appear>
-          <Appear>
-            <Image display="inline-block" height="300px" margin="0 50px" src={images.rust} />
-          </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular">
-            Rust
-          </Heading>
-          <List type="A" textColor="regular" style={{ listStyle: 'none' }}>
-            <ListItem{...listStyling}>
-              {rust}
-              it's a
-              <S type="" style={{ color: colors.highlight }}> modern </S>
-              language
-            </ListItem>
-            <ListItem {...listStyling}>{rust}friendly learning curve</ListItem>
-            <ListItem {...listStyling}>{rust}super safe: no memory corruptions/null pointers</ListItem>
-            <ListItem {...listStyling}>{rust}built with cross-platform in mind</ListItem>
-            <ListItem {...listStyling}>{rust}built in unit testing support</ListItem>
-            <ListItem {...listStyling}>{rust}great tooling (Cargo)</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
           <Heading size={1} textColor="regular">
             DEMO
           </Heading>
