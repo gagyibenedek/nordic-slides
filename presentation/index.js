@@ -28,40 +28,42 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 const images = {
-  kettle: require("../assets/kettle.jpg"),
-  teapick: require("../assets/teapick.jpg"),
-  meditation: require("../assets/meditation.jpg"),
+  superman: require("../assets/superman.jpg"),
+  riddler: require("../assets/riddler.jpg"),
+  sherlock: require("../assets/sherlock.jpg"),
+  nils: require("../assets/nils.jpg"),
+  ibra: require("../assets/ibra.jpg"),
   wasmLogo: require("../assets/WebAssembly_Logo.png"),
   compile: require("../assets/compile.png"),
   speed: require("../assets/speed.svg"),
   joinme: require("../assets/jm.svg"),
   lmi: require("../assets/lmi.svg"),
   android: require("../assets/android.svg"),
-  goodIdea: require("../assets/goodIdea.png"),
-  drawback: require("../assets/drawback.gif"),
   door: require("../assets/door.gif"),
-  snoopy: require("../assets/snoopy.png"),
   tech: require("../assets/tech.svg"),
   techHL: require("../assets/techHL.svg"),
   brain: require("../assets/brain.svg"),
   brainHL: require("../assets/brainHL.svg"),
   rust: require("../assets/rust.svg"),
+  battlefield: require("../assets/battlefield.jpg"),
   emscripten: require("../assets/emscripten.png"),
-  layers1: require("../assets/layers1.png"),
-  layers2: require("../assets/layers2.png"),
   heart: require("../assets/heart.png"),
   win: require("../assets/win.png"),
   ios: require("../assets/ios.png"),
   html5: require("../assets/html5.png"),
-  fast: require("../assets/fast.jpg"),
-  slow: require("../assets/slow.jpg"),
+  familyCar: require("../assets/familyCar.jpg"),
+  rallyCar: require("../assets/rallyCar.jpg"),
+  spaceShip: require("../assets/spaceShip.jpg"),
+  bug: require("../assets/bug.jpg"),
   connect: require("../assets/connect.jpg"),
   dongle: require("../assets/dongle.jpg"),
   plug: require("../assets/plug.jpg"),
   ports: require("../assets/ports.jpg"),
-  corruption: require("../assets/corruption.jpg"),
+  abstract: require("../assets/abstract.jpg"),
   tweet: require("../assets/tweet.png"),
-  mac: require("../assets/mac.gif")
+  mac: require("../assets/mac.gif"),
+  layers1: require("../assets/layers1.png"),
+  layers2: require("../assets/layers2.png")
 };
 
 preloader(images);
@@ -81,14 +83,12 @@ const highlightedHeader = {
   color: colors.highlight,
   fontWeight: "bold"
 };
-const listStyling = {textSize:"2rem", margin: "25px 0"};
-const listStylingBig = {textSize:"2.66rem", margin: "25px 0"};
-const listImage = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.speed} />;
-const snoopy = <Image display="inline-block" height="60px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.snoopy} />;
+const listStyling = { textSize: "2rem", margin: "25px 0" };
+const listStylingBig = { textSize: "2.66rem", margin: "25px 0" };
+const listImage = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: "middle" }} src={images.speed} />;
 const plus = <S type="bold" textSize="3rem" textColor="regular" margin="0 10px">++</S>;
 const minus = <S type="bold" textSize="3rem" textColor="highlight" margin="0 10px">--</S>;
-const rust = <Image display="inline-block" height="30px" margin="0 10px" style={{ verticalAlign: 'middle' }} src={images.rust} />;
-const organizeList = {textColor: "regular", textSize: "2.5rem", padding: "20px"}
+const organizeList = { textColor: "regular", textSize: "2.5rem", padding: "20px" };
 
 export default class Presentation extends React.Component {
   render() {
@@ -103,101 +103,22 @@ export default class Presentation extends React.Component {
             as cross-platform architecture?!
           </Heading>
           <Appear>
-            <Heading size={4} textColor="regular" textSize="60" style={{ transform: 'translateY(150px)' }}>
+            <Heading size={4} textColor="regular" textSize="60" style={{ transform: "translateY(150px)" }}>
               <S type="bold" textColor="highlight">@</S>
               BenedekGagyi
             </Heading>
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.kettle} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="#0060aa" bgImage={images.superman} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.teapick} />
+        <Slide transition={["fade"]} bgColor="#191919" bgImage={images.riddler} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.meditation} />
+        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.sherlock} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={1} textColor="regular" >
-            What is
-            <Image src={images.wasmLogo} height="300px" display="inline-block" margin="0 20px" style={{ verticalAlign: 'middle' }}/>
-            ?
-          </Heading>
-        </Slide>
+        <Slide transition={["fade"]} bgColor="#7ab8e9" bgImage={images.nils} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <BlockQuote>
-            <Quote textSize={75} textColor="regular">
-              Static-language compiler target low-level portable binary code format.
-              <br />
-              <S type="" style={highlightedHeader}>Go nuts.</S>
-            </Quote>
-            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
-          </BlockQuote>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" >
-            A
-            <S type="" style={highlightedHeader}> binary </S>
-            format
-          </Heading>
-          <Image display="block" height="500" src={images.compile} />
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" >
-            The next step in web
-            <S type="" style={highlightedHeader}> performance</S>
-          </Heading>
-          <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
-            <ListItem {...listStyling}>{listImage}inherently compressed</ListItem>
-            <ListItem {...listStyling}>{listImage}no interpretation step</ListItem>
-            <ListItem {...listStyling}>{listImage}consistent performance</ListItem>
-            <ListItem {...listStyling}>{listImage}manual memory management</ListItem>
-            <ListItem {...listStyling}>{listImage}CPU features (i64, popcount etc.)</ListItem>
-            <ListItem {...listStyling}>{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.slow}/>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.fast} />
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" >
-          <Heading size={1} textColor="highlight" textSize="200px" margin="0 0 50px">
-            !
-            <Image display="inline-block" height="200px" style={{ verticalAlign: 'bottom'}} src={images.wasmLogo} />
-          </Heading>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              solo mission
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              the next Java applet
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              ready yet
-            </Text>
-          </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <BlockQuote>
-            <Quote textSize={75} textColor="regular">
-              WebAssembly is a way to run programming languages
-              <S type="" style={highlightedHeader}> other </S>
-              than JavaScript on web pages.
-            </Quote>
-            <Cite textSize={50} textColor="highlight">Lin Clark</Cite>
-          </BlockQuote>
-        </Slide>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.ibra} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={1} textColor="regular">The</Heading>
@@ -240,28 +161,60 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={3} textColor="regular">Cross platform solutions?</Heading>
-          <Appear>
-            <Image display="inline-block" margin={10} src={images.goodIdea} height="250px"/>
-          </Appear>
-          <Appear>
-            <Image display="inline-block" margin={10} src={images.drawback} height="250px"/>
-          </Appear>  
+          <Layout>
+            <Fill>
+              <Heading size={4} textColor="regular">Web-based CP</Heading>
+            </Fill>
+            <Fill />
+            <Fill>
+              <Heading size={4} textColor="highlight">Native</Heading>
+            </Fill>
+          </Layout>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular">
             The
             <S type="" style={highlightedHeader}> drawbacks </S>
-            of cross-platform web development
+            of web-based cross-platform web development
           </Heading>
-          <List type="A" textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
-            <ListItem {...listStyling}>{snoopy}abstraction</ListItem>
-            <ListItem {...listStyling}>{snoopy}performance</ListItem>
-            <ListItem {...listStyling}>{snoopy}library vs. ecosystem</ListItem>
-            <ListItem {...listStyling}>{snoopy}(can be) and HR nightmare</ListItem>
+          <List type="A" textColor="regular" margin="40px 0 0">
+            <ListItem {...listStyling}>abstraction</ListItem>
+            <ListItem {...listStyling}>performance</ListItem>
+            <ListItem {...listStyling}>look and feel</ListItem>
+            <ListItem {...listStyling}>(can be) and HR nightmare</ListItem>
           </List>
         </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular">
+            The
+            <S type="" style={highlightedHeader}> drawbacks </S>
+            of native development
+          </Heading>
+          <List type="A" textColor="regular" margin="40px 0 0">
+            <ListItem {...listStyling}>same problems, different solutions</ListItem>
+            <ListItem {...listStyling}>one bug, many fixes</ListItem>
+            <ListItem {...listStyling}>versioning, backwards compatibility</ListItem>
+          </List>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Layout>
+            <Fill>
+              <Heading size={4} textColor="regular">Web-based CP</Heading>
+            </Fill>
+            <Fill />
+            <Fill>
+              <Heading size={4} textColor="highlight">Native</Heading>
+            </Fill>
+          </Layout>
+          <Layout style={{ background: "-webkit-linear-gradient(left, #60b200, #ef6a00)" }}>
+            <br />
+          </Layout>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.battlefield} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Layout>
@@ -306,6 +259,91 @@ export default class Presentation extends React.Component {
               COMMON
             </Heading>
           </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" >
+            What is
+            <Image src={images.wasmLogo} height="300px" display="inline-block" margin="0 20px" style={{ verticalAlign: 'middle' }}/>
+            ?
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <BlockQuote>
+            <Quote textSize={75} textColor="regular">
+              Static-language compiler target low-level portable binary code format.
+              <br />
+              <S type="" style={highlightedHeader}>Go nuts.</S>
+            </Quote>
+            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
+          </BlockQuote>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" >
+            A
+            <S type="" style={highlightedHeader}> binary </S>
+            format
+          </Heading>
+          <Image display="block" height="500" src={images.compile} />
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" >
+            The next step in web
+            <S type="" style={highlightedHeader}> performance</S>
+          </Heading>
+          <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
+            <ListItem {...listStyling}>{listImage}inherently compressed</ListItem>
+            <ListItem {...listStyling}>{listImage}no interpretation step</ListItem>
+            <ListItem {...listStyling}>{listImage}consistent performance</ListItem>
+            <ListItem {...listStyling}>{listImage}manual memory management</ListItem>
+            <ListItem {...listStyling}>{listImage}CPU features (i64, popcount etc.)</ListItem>
+            <ListItem {...listStyling}>{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
+          </List>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.familyCar} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.rallyCar} />
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.spaceShip} />
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" >
+          <Heading size={1} textColor="highlight" textSize="200px" margin="0 0 50px">
+            !
+            <Image display="inline-block" height="200px" style={{ verticalAlign: "bottom" }} src={images.wasmLogo} />
+          </Heading>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              solo mission
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              the next Java applet
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              ready yet
+            </Text>
+          </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <BlockQuote>
+            <Quote textSize={75} textColor="regular">
+              WebAssembly is a way to run programming languages
+              <S type="" style={highlightedHeader}> other </S>
+              than JavaScript on web pages.
+            </Quote>
+            <Cite textSize={50} textColor="highlight">Lin Clark</Cite>
+          </BlockQuote>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
@@ -388,6 +426,12 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.abstract}>
+          <Appear>
+            <Heading size={6} textColor="white" bgColor="highlight" padding="10px" margin="10px">Networking</Heading>
+          </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers1} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers2} bgSize="contain" bgRepeat="no-repeat"/>
@@ -437,6 +481,8 @@ export default class Presentation extends React.Component {
             <S type="" style={highlightedHeader}> must</S>
           </Heading>
         </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.bug}/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Layout style={{ alignItems: 'center' }}>
@@ -553,8 +599,6 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.corruption} bgSize="contain" bgRepeat="no-repeat"/>
-        {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.tweet} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
@@ -567,6 +611,8 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
         {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.ibra} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
         <Slide transition={["zoom"]} bgColor="bg">
           <Heading size={1} fit caps lineHeight={1} textColor="highlight">
             Thank You!
@@ -576,7 +622,6 @@ export default class Presentation extends React.Component {
             BenedekGagyi
           </Text>
         </Slide>
-
         {/* ************************************  END  ************************************ */}
       </Deck>
     );
