@@ -28,11 +28,9 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 const images = {
-  superman: require("../assets/superman.jpg"),
-  riddler: require("../assets/riddler.jpg"),
-  sherlock: require("../assets/sherlock.jpg"),
-  nils: require("../assets/nils.jpg"),
-  ibra: require("../assets/ibra.jpg"),
+  kettle: require("../assets/kettle.jpg"),
+  teapick: require("../assets/teapick.jpg"),
+  meditation: require("../assets/meditation.jpg"),
   wasmLogo: require("../assets/WebAssembly_Logo.png"),
   compile: require("../assets/compile.png"),
   speed: require("../assets/speed.svg"),
@@ -110,15 +108,114 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#0060aa" bgImage={images.superman} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.kettle} bgSize="60%" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#191919" bgImage={images.riddler} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.teapick} />
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.sherlock} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.meditation} />
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#7ab8e9" bgImage={images.nils} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="bg">
+          <Layout>
+            <Fill>
+              <Image src={images.joinme} height="200px" />
+            </Fill>
+            <Fill>
+              <S type="" textSize="170px" style={{ color: colors.highlight }}>+</S>
+            </Fill>
+            <Fill>
+              <Image src={images.wasmLogo} height="200px" />
+            </Fill>
+            <Fill>
+              <S type="" textSize="170px" style={{ color: colors.highlight }}>=</S>
+            </Fill>
+            <Fill>
+              <Image src={images.heart} height="200px" />
+            </Fill>
+          </Layout>
+        </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.ibra} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={1} textColor="regular" >
+            What is
+            <Image src={images.wasmLogo} height="300px" display="inline-block" margin="0 20px" style={{ verticalAlign: 'middle' }}/>
+            ?
+          </Heading>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <BlockQuote>
+            <Quote textSize={75} textColor="regular">
+              Static-language compiler target low-level portable binary code format.
+              <br />
+              <S type="" style={highlightedHeader}>Go nuts.</S>
+            </Quote>
+            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
+          </BlockQuote>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" >
+            A
+            <S type="" style={highlightedHeader}> binary </S>
+            format
+          </Heading>
+          <Image display="block" height="500" src={images.compile} />
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <Heading size={4} textColor="regular" >
+            The next step in web
+            <S type="" style={highlightedHeader}> performance</S>
+          </Heading>
+          <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
+            <ListItem {...listStyling}>{listImage}inherently compressed</ListItem>
+            <ListItem {...listStyling}>{listImage}no interpretation step</ListItem>
+            <ListItem {...listStyling}>{listImage}consistent performance</ListItem>
+            <ListItem {...listStyling}>{listImage}manual memory management</ListItem>
+            <ListItem {...listStyling}>{listImage}CPU features (i64, popcount etc.)</ListItem>
+            <ListItem {...listStyling}>{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
+          </List>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.familyCar} bgSize="contain" bgRepeat="no-repeat"/>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" bgImage={images.spaceShip} />
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg" >
+          <Heading size={1} textColor="highlight" textSize="200px" margin="0 0 50px">
+            !
+            <Image display="inline-block" height="200px" style={{ verticalAlign: "bottom" }} src={images.wasmLogo} />
+          </Heading>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              solo mission
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              the next Java applet
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="regular" textSize="4rem">
+              <S type="bold" textColor="highlight">! </S>
+              ready yet
+            </Text>
+          </Appear>
+        </Slide>
+        {/* ************************************    ************************************ */}
+        <Slide transition={["fade"]} bgColor="bg">
+          <BlockQuote>
+            <Quote textSize={75} textColor="regular">
+              WebAssembly is a way to run programming languages
+              <S type="" style={highlightedHeader}> other </S>
+              than JavaScript on web pages.
+            </Quote>
+            <Cite textSize={50} textColor="highlight">Lin Clark</Cite>
+          </BlockQuote>
+        </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Heading size={1} textColor="regular">The</Heading>
@@ -179,7 +276,6 @@ export default class Presentation extends React.Component {
             of web-based cross-platform web development
           </Heading>
           <List type="A" textColor="regular" margin="40px 0 0">
-            <ListItem {...listStyling}>abstraction</ListItem>
             <ListItem {...listStyling}>performance</ListItem>
             <ListItem {...listStyling}>look and feel</ListItem>
             <ListItem {...listStyling}>(can be) and HR nightmare</ListItem>
@@ -213,8 +309,6 @@ export default class Presentation extends React.Component {
             <br />
           </Layout>
         </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.battlefield} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
           <Layout>
@@ -259,91 +353,6 @@ export default class Presentation extends React.Component {
               COMMON
             </Heading>
           </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={1} textColor="regular" >
-            What is
-            <Image src={images.wasmLogo} height="300px" display="inline-block" margin="0 20px" style={{ verticalAlign: 'middle' }}/>
-            ?
-          </Heading>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <BlockQuote>
-            <Quote textSize={75} textColor="regular">
-              Static-language compiler target low-level portable binary code format.
-              <br />
-              <S type="" style={highlightedHeader}>Go nuts.</S>
-            </Quote>
-            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
-          </BlockQuote>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" >
-            A
-            <S type="" style={highlightedHeader}> binary </S>
-            format
-          </Heading>
-          <Image display="block" height="500" src={images.compile} />
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <Heading size={4} textColor="regular" >
-            The next step in web
-            <S type="" style={highlightedHeader}> performance</S>
-          </Heading>
-          <List textColor="regular" margin="40px 0 0" style={{ listStyle: 'none' }}>
-            <ListItem {...listStyling}>{listImage}inherently compressed</ListItem>
-            <ListItem {...listStyling}>{listImage}no interpretation step</ListItem>
-            <ListItem {...listStyling}>{listImage}consistent performance</ListItem>
-            <ListItem {...listStyling}>{listImage}manual memory management</ListItem>
-            <ListItem {...listStyling}>{listImage}CPU features (i64, popcount etc.)</ListItem>
-            <ListItem {...listStyling}>{listImage}WASM specific compiler optimizations (Binaryen)</ListItem>
-          </List>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.familyCar} bgSize="contain" bgRepeat="no-repeat"/>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.rallyCar} />
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.spaceShip} />
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" >
-          <Heading size={1} textColor="highlight" textSize="200px" margin="0 0 50px">
-            !
-            <Image display="inline-block" height="200px" style={{ verticalAlign: "bottom" }} src={images.wasmLogo} />
-          </Heading>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              solo mission
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              the next Java applet
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="regular" textSize="4rem">
-              <S type="bold" textColor="highlight">! </S>
-              ready yet
-            </Text>
-          </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
-          <BlockQuote>
-            <Quote textSize={75} textColor="regular">
-              WebAssembly is a way to run programming languages
-              <S type="" style={highlightedHeader}> other </S>
-              than JavaScript on web pages.
-            </Quote>
-            <Cite textSize={50} textColor="highlight">Lin Clark</Cite>
-          </BlockQuote>
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
@@ -393,7 +402,7 @@ export default class Presentation extends React.Component {
           <Appear>
             <List type="A" textColor="regular" style={{ listStyle: 'none' }}>
               <ListItem {...listStylingBig}>{plus}fluid integration of new platforms</ListItem>
-              <ListItem {...listStylingBig}>{plus}the <S type="" textColor="highlight">"right"</S> amount of freedom</ListItem>
+              <ListItem {...listStylingBig}>{plus}huge community</ListItem>
             </List>
           </Appear>
         </Slide>
@@ -426,12 +435,6 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.abstract}>
-          <Appear>
-            <Heading size={6} textColor="white" bgColor="highlight" padding="10px" margin="10px">Networking</Heading>
-          </Appear>
-        </Slide>
-        {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers1} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.layers2} bgSize="contain" bgRepeat="no-repeat"/>
@@ -440,7 +443,7 @@ export default class Presentation extends React.Component {
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.ports} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg" bgImage={images.dongle} bgSize="contain" bgRepeat="no-repeat"/>
+        <Slide transition={["fade"]} bgColor="#fff" bgImage={images.dongle} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg" bgImage={images.plug} bgSize="contain" bgRepeat="no-repeat"/>
         {/* ************************************    ************************************ */}
