@@ -143,17 +143,6 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* ************************************    ************************************ */}
         <Slide transition={["fade"]} bgColor="bg">
-          <BlockQuote>
-            <Quote textSize={75} textColor="regular">
-              Static-language compiler target low-level portable binary code format.
-              <br />
-              <S type="" style={highlightedHeader}>Go nuts.</S>
-            </Quote>
-            <Cite textSize={50} textColor="highlight">Brendan Eich</Cite>
-          </BlockQuote>
-        </Slide>
-        {/* ************************************    ************************************ */}
-        <Slide transition={["fade"]} bgColor="bg">
           <Heading size={4} textColor="regular" >
             A
             <S type="" style={highlightedHeader}> binary </S>
